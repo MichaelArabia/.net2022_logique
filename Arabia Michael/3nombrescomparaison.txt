@@ -1,0 +1,55 @@
+debut comparaison3nbr
+
+	variable locale :
+		VAR nb1 : N
+		VAR nb2 : N
+		VAR nb3 : N
+		VAR tampon : N
+		VAR op1 : T <- <
+		VAR op2 : T <- <
+	fin variable
+	
+	Afficher "Se programme va vous demander 3 nombres et vous afficher les nombres du plus grand au plus petit."
+	
+	Afficher "Insérer le premier nombre : "
+	Saisir nb1
+	
+	Afficher "Insérer le deuxième nombre : "
+	Saisir nb2
+	
+	Afficher "Insérer le troisième nombre : "
+	Saisir nb3
+	
+	SI ( nb1 > nb2 )
+		ALORS
+			tampon <- nb1
+			nb1 <- nb2
+			nb2 <- nb1		
+	FINSI
+	
+	SI ( nb2 > nb3 )
+		ALORS
+			tampon <- nb2
+			nb2 <- nb3
+			nb3 <- tampon
+			
+			SI (nb1 > nb2)
+				tampon <- nb1
+				nb1 <- nb2
+				nb2 <- tampon
+			FINSI
+	FINSI
+	
+	SI (nb1 = nb2)
+		ALORS
+		op1 <- =
+	FINSI
+	
+	SI (nb2 = nb3)
+		ALORS
+		op2 <- =
+	FINSI
+	
+	Afficher nb1, op1, nb2, op2, nb3
+
+fin comparaison3nbr
